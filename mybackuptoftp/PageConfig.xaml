@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Page x:Class="mybackuptoftp.PageConfig"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"  
+      Title="Configuración" Height="800" Width="900">
+
+    <StackPanel>
+        <StackPanel.Background>
+            <ImageBrush ImageSource="Images\background.jpg"></ImageBrush>
+        </StackPanel.Background>
+
+        <!--#2196F3-->
+        <GroupBox Header="Configuración copia de seguridad" TextBlock.Foreground="Black" FontSize="20" FontWeight="DemiBold" Margin="20,5">
+            <Grid Margin="0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Grid.Column="0" Grid.Row="0" FontWeight="Medium" TextBlock.Foreground="Black"  Content="Nombre del cliente" FontSize="20"></Label>
+                <TextBox Grid.Column="1" Grid.Row="0" x:Name="tbClient" FontSize="20"></TextBox>
+                <Label Grid.Column="0" Grid.Row="1" FontWeight="Medium" TextBlock.Foreground="Black"  Content="Hora de inicio" FontSize="20"></Label>
+                <TextBox Grid.Column="1" Grid.Row="1" x:Name="tbHour" FontSize="20"  Text="00:00"></TextBox>
+                <Label Grid.Column="0" Grid.Row="3" FontWeight="Medium" TextBlock.Foreground="Black"  Content="Email del cliente" FontSize="20"></Label>
+                <TextBox Grid.Column="1" Grid.Row="3" x:Name="tbEmail" FontSize="20"></TextBox>
+                <Label Grid.Column="0" Grid.Row="4" FontWeight="Medium" TextBlock.Foreground="Black"  Content="Modalidad" FontSize="20"></Label>
+                <ListBox Grid.Column="1" Grid.Row="4" x:Name="lbType" FontSize="20">
+                    <ListBoxItem Content="Semanal"></ListBoxItem>
+                    <ListBoxItem Content="Mensual"></ListBoxItem>
+                </ListBox>
+                <CheckBox Content="Copia Automática" FontSize="15" Grid.Column="0"  TextBlock.Foreground="Black"  IsChecked="True" Grid.Row="5" x:Name="cbCopyAuto"></CheckBox>
+                <CheckBox Content="Ventanas de ayuda" FontSize="15" IsChecked="True" TextBlock.Foreground="Black"  Grid.Column="0" Grid.Row="6" x:Name="cbHelpWindows"></CheckBox>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="Configuración FTP" FontSize="20" Margin="20,10"  TextBlock.Foreground="Black" FontWeight="DemiBold">
+            <Grid Margin="0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Grid.Column="0" Grid.Row="0" FontWeight="Medium" TextBlock.Foreground="Black" Content="Servidor FTP" FontSize="20"></Label>
+                <TextBox Grid.Column="1" Grid.Row="0" x:Name="tbServerFTP" FontSize="20"></TextBox>
+                <Label Grid.Column="0" Grid.Row="1" FontWeight="Medium" TextBlock.Foreground="Black"  Content="Usuario" FontSize="20"></Label>
+                <TextBox Grid.Column="1" Grid.Row="1" x:Name="tbUserFTP" FontSize="20"></TextBox>
+                <Label Grid.Column="0" Grid.Row="2" FontWeight="Medium" TextBlock.Foreground="Black"  Content="Contraseña" FontSize="20"></Label>
+                <PasswordBox Grid.Column="1" Grid.Row="2" x:Name="pbPasswordFTP" Password="" FontSize="20"></PasswordBox>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="Configuración Base de datos (MySQL 5.5+)" FontSize="20" TextBlock.Foreground="Black" FontWeight="DemiBold" Margin="20,5">
+            <Grid Margin="0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Grid.Column="0" Grid.Row="0" FontWeight="Medium" TextBlock.Foreground="Black" Content="Usuario" FontSize="20"></Label>
+                <TextBox Grid.Column="1" Grid.Row="0" x:Name="tbUserDB" Text="" FontSize="20"></TextBox>
+                <Label Grid.Column="0" Grid.Row="1" FontWeight="Medium" TextBlock.Foreground="Black"  Content="Contraseña" FontSize="20"></Label>
+                <PasswordBox Grid.Column="1" Grid.Row="1" x:Name="pbPasswordDB" Password="" FontSize="20"></PasswordBox>
+                <Label Grid.Column="0" Grid.Row="2" FontWeight="Medium" TextBlock.Foreground="Black"  Content="Equipo" FontSize="20"></Label>
+                <TextBox Grid.Column="1" Grid.Row="2" x:Name="tbHost" Text="localhost" FontSize="20"></TextBox>
+                <Label Grid.Column="0" Grid.Row="3" FontWeight="Medium" TextBlock.Foreground="Black"  Content="Puerto" FontSize="20"></Label>
+                <TextBox Grid.Column="1" Grid.Row="3" x:Name="tbPort" Text="3306" FontSize="20"></TextBox>
+                <Label Grid.Column="0" Grid.Row="4" FontWeight="Medium" TextBlock.Foreground="Black"  Content="Base de datos" FontSize="20"></Label>
+                <TextBox Grid.Column="1" Grid.Row="4" x:Name="tbDB" Text="" FontSize="20"></TextBox>
+            </Grid>
+        </GroupBox>
+        
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="20,10">
+            <!--<Button Margin="5,0" x:Name="btUnlock" FontSize="20" Background="White"  HorizontalAlignment="Right" Content=" Desbloquear " Visibility="Hidden"></Button>-->
+            <Button Margin="5,0"  x:Name="btInit" FontSize="18" Background="White"  HorizontalAlignment="Right" Content=" Guardar "></Button>
+            <Button HorizontalAlignment="Right"  x:Name="btCancel" FontSize="18" Background="White"  Content=" Salir "></Button>
+        </StackPanel>
+    </StackPanel>
+</Page>
